@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+
 public class Project {
 
 //Instance Variables
@@ -18,7 +20,7 @@ public class Project {
     }
 
 //Methods
-    
+
 //Getter/Setter
     public String getName() {
         return name;
@@ -59,7 +61,6 @@ public class Project {
     public void setTeamMembers(List<Employee> teamMembers) {
         this.teamMembers = teamMembers;
     }
-
 
 
 
