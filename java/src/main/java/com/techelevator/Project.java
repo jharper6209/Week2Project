@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Project {
 
@@ -9,7 +10,7 @@ public class Project {
     private String description;
     private String startDate;
     private String dueDate;
-    private List<Employee> teamMembers;    //set teamMembers to an empty list in the implementation
+    private List<Employee> teamMembers;
 
 //Constructors
     public Project (String name, String description,String startDate, String dueDate) {

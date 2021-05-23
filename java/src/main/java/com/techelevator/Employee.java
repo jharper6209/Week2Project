@@ -3,17 +3,15 @@ package com.techelevator;
 public class Employee {
 
 //Instance Variables
+    private static final double SALARY = 60000;
     private long employeeId;
     private String firstName;
     private String lastName;
     private String email;
-    private double salary;
     private Department department;
     private String hireDate;
 
-//Static constant
-    //default starting salary 60K and stored in a static constant variable type double
-    // ??
+
 
 //Constructors
     public Employee (long employeeId, String firstName,String lastName, String email, Department department, String hireDate){
@@ -23,9 +21,11 @@ public class Employee {
         this.email = email;
         this.department = department;
         this.hireDate = hireDate;
+        double SALARY = SALARY;
     }
 
     public Employee() {
+
     }
 
 //Methods
@@ -33,7 +33,9 @@ public class Employee {
         return (lastName + ", " + firstName);
     }
     public void raiseSalary(double percent) {
+       //SALARY(SALARY * (1.0 + (percent/100)));
         salary = salary * (1.0 + (percent/100));
+
     }
 
 //Getter/Setter
@@ -69,13 +71,9 @@ public class Employee {
         this.email = email;
     }
 
-    public double getSalary() {
-        return salary;
-    }
+  //  public double getSalary() {        return salary;    }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
+    // public void setSalary(double salary) {        this.salary = salary;    }
 
     public Department getDepartment() {
         return department;
@@ -93,6 +91,7 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-
-
+    public static double getSALARY() {
+        return SALARY;
+    }
 }

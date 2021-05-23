@@ -5,6 +5,8 @@ import jdk.jshell.SourceCodeAnalysis;
 import javax.print.attribute.standard.MediaSize;
 import javax.print.attribute.standard.PrinterMakeAndModel;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Application {
     
@@ -43,11 +45,10 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     private static void createDepartments() {
-/*       Department Marketing = new Department(001);
-         Department Sales = new Department(002);
-         Department Engineering = new Department(003);
+   // Department Marketing = new Department(001);
+   // Department Sales = new Department(002);
+   // Department Engineering = new Department(003);
 
- */
 
     }
 
@@ -56,27 +57,27 @@ public class Application {
      */
     private static void printDepartments() {
         System.out.println("------------- DEPARTMENTS ------------------------------");
-/*        System.out.println(Marketing);
-          System.out.println(Sales);
-          System.out.println(Engineering);
+       // System.out.println(Marketing);
+        //System.out.println(Sales);
+        //System.out.println(Engineering);  // pretty sure  a for loop will pull them in
 
- */
+
     }
 
     /**
      * Create employees and add them to the collection of employees
      */
     private static void createEmployees() {
-/*  List<Employee> employees = new ArrayList();
+    List<Employee> employees = new ArrayList();
 
-    **Tip: use the Departments from the departments list to assign each employee's department. Retrieve
+ /*   **Tip: use the Departments from the departments list to assign each employee's department. Retrieve
             the two departments you need by using the get() method.**
 
        *use no-argument constructor and call setter methods to set each instance variable
     employeeId = 001;
     firstName = Dean;
     lastName = Johnson;
-    email = djohnson@teams.com;
+    email = djohnson@teams.com;            Think we need to add parameters to our no arg const
     salary = 60000;
     department = Engineering;
     hireDate = 08/21/2020
@@ -115,17 +116,17 @@ public class Application {
     }
 
     /**
-     * Create the 'TEams' project.
+     * Create the 'Teams' project.
      */
     private static void createTeamsProject() {
-/*  Map<String, Project> TEams= new HashMap();
-        name: TEams
+/*  Map<String, Project> Teams= new HashMap();
+        name: Teams
         description: Project Management Software
         startDate: 10/10/2020
         dueDate: 11/10/2020
 
-        TEams.put(Dean Johnson);
-        TEams.put(Angie Smith);
+        Teams.put(Dean Johnson);
+        Teams.put(Angie Smith);
 
  */
     }
@@ -150,7 +151,7 @@ public class Application {
     private static void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
 /*  print number of employees on the project
-        TEams: 2
+        Teams: 2
         Marketing Landing Page: 1
 
  */
