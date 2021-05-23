@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import javax.print.attribute.standard.PrinterMakeAndModel;
+
 public class Application {
 
 
@@ -10,10 +12,16 @@ public class Application {
     public static void main(String[] args) {
 
         // create some departments
-        createDepartments();
+ //       Department Marketing = new Department(001);
+ //       Department Sales = new Department(002);
+ //       Department Engineering = new Department(003);
+
 
         // print each department by name
         printDepartments();
+ //       System.out.println(Marketing);
+ //       System.out.println(Sales);
+ //       System.out.println(Engineering);
 
         // create employees
         createEmployees();
