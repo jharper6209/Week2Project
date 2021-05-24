@@ -7,9 +7,15 @@ import javax.print.attribute.standard.PrinterMakeAndModel;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Application {
-    
+    public  static List<Department> departments = new ArrayList<>();
+    public static List<Employee> employees = new ArrayList<>();
+    public static List<Employee> deptMarketing = new ArrayList<>();
+    public static List<Employee> deptSales = new ArrayList<>();
+    public static Map<String, Project> projects = new HashMap();
+
     /**
      * The main entry point in the application
      * @param args
@@ -45,9 +51,12 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     private static void createDepartments() {
-   // Department Marketing = new Department(001);
-   // Department Sales = new Department(002);
-   // Department Engineering = new Department(003);
+        Department Marketing = new Department();
+        Department Sales = new Department();
+        Department Engineering = new Department();
+        Department.add(Marketing);
+        Department.add(Sales);
+        Department.add(Engineering);
 
 
     }
@@ -57,9 +66,10 @@ public class Application {
      */
     private static void printDepartments() {
         System.out.println("------------- DEPARTMENTS ------------------------------");
-       // System.out.println(Marketing);
-        //System.out.println(Sales);
-        //System.out.println(Engineering);  // pretty sure  a for loop will pull them in
+        System.out.println("Department: " + Marketing);
+        System.out.println(Marketing);
+        System.out.println(Sales);
+        System.out.println(Engineering);  // pretty sure  a for loop will pull them in
 
 
     }

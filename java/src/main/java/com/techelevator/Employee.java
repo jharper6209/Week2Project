@@ -1,9 +1,11 @@
 package com.techelevator;
 
+import java.util.Objects;
+
 public class Employee {
 
 //Instance Variables
-    private static final double SALARY = 60000;
+    private double salary;
     private long employeeId;
     private String firstName;
     private String lastName;
@@ -11,9 +13,12 @@ public class Employee {
     private Department department;
     private String hireDate;
 
-
+    private static final int STARTING_SALARY = 60000;
 
 //Constructors
+
+
+
     public Employee (long employeeId, String firstName,String lastName, String email, Department department, String hireDate){
         this.employeeId = employeeId;
         this.firstName = firstName;
@@ -21,7 +26,8 @@ public class Employee {
         this.email = email;
         this.department = department;
         this.hireDate = hireDate;
-        double SALARY = SALARY;
+        this.salary = STARTING_SALARY;
+
     }
 
     public Employee() {
@@ -32,9 +38,45 @@ public class Employee {
     public String getFullName() {
         return (lastName + ", " + firstName);
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "salary=" + salary +
+                ", employeeId=" + employeeId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", department=" + department +
+                ", hireDate='" + hireDate + '\'' +
+                '}';
+
+    }
+//          equls() ?? do we need all this??
+    /*    @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Employee)) return false;
+            Employee employee = (Employee) o;
+            return Double.compare(employee.getSalary(),
+                    getSalary()) == 0 && getEmployeeId() == employee.getEmployeeId() && Objects.equals(getFirstName(),
+                    employee.getFirstName()) && Objects.equals(getLastName(),
+                    employee.getLastName()) && Objects.equals(getEmail(),
+                    employee.getEmail()) && Objects.equals(getDepartment(),
+                    employee.getDepartment()) && Objects.equals(getHireDate(),
+                    employee.getHireDate());
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(getSalary(), getEmployeeId(), getFirstName(), getLastName(), getEmail(), getDepartment(), getHireDate());
+        }
+    */
     public void raiseSalary(double percent) {
        //SALARY(SALARY * (1.0 + (percent/100)));
         salary = salary * (1.0 + (percent/100));
+
+
 
     }
 
@@ -91,7 +133,7 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    public static double getSALARY() {
-        return SALARY;
+    public double getSalary() {
+        return salary;
     }
 }

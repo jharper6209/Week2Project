@@ -22,7 +22,19 @@ public class Project {
 
 //Methods
 
-//Getter/Setter
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", dueDate='" + dueDate + '\'' +
+                ", teamMembers=" + teamMembers +
+                '}';
+    }
+
+    //Getter/Setter
     public String getName() {
         return name;
     }
