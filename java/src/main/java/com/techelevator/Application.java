@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Application {
-    public  static List<Department> departments = new ArrayList<>();
+    public static List<Department> departments = new ArrayList<>();
     public static List<Employee> employees = new ArrayList<>();
     public static List<Employee> deptMarketing = new ArrayList<>();
     public static List<Employee> deptSales = new ArrayList<>();
@@ -50,29 +50,44 @@ public class Application {
     /**
      * Create departments and add them to the collection of departments
      */
-    private static void createDepartments() {
-        Department Marketing = new Department();
-        Department Sales = new Department();
-        Department Engineering = new Department();
-        Department.add(Marketing);
-        Department.add(Sales);
-        Department.add(Engineering);
+    public static void createDepartments() {
+        List<String> departments = new ArrayList<>();
 
+     //   Department Marketing = new Department();
+       // Department Sales = new Department();
+     //   Department Engineering = new Department();
+        departments.add("Marketing"");
+        departments.add("Sales");
+        departments.add("Engineering");
+        System.out.println(departments) ;
 
+        System.out.println(departments.size());
+
+        System.out.println(departments.get(0));
+        System.out.println(departments.get(1));
+        System.out.println(departments.get(2));
     }
 
     /**
      * Print out each department in the collection.
      */
-    private static void printDepartments() {
+    public static void printDepartments() {
         System.out.println("------------- DEPARTMENTS ------------------------------");
-        System.out.println("Department: " + Marketing);
-        System.out.println(Marketing);
-        System.out.println(Sales);
-        System.out.println(Engineering);  // pretty sure  a for loop will pull them in
-
-
+        System.out.println(departments.get(0));
+        System.out.println(departments.get(1));
+        System.out.println(departments.get(2));
+            System.out.println(departments.size());
+        //    System.out.println(departments.get(0));
+        for (int i = 0; i < departments.size(); i++) {
+            System.out.println(departments.get(i));
+        }
     }
+    //    System.out.println(Marketing);
+    //    System.out.println(Sales);
+    //    System.out.println(Engineering);  // pretty sure  a for loop will pull them in
+
+
+
 
     /**
      * Create employees and add them to the collection of employees
