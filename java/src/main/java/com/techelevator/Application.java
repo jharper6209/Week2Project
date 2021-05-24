@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Application {
+    // defining these outside any method make them available to every method in this class, no need to worry
+    // about how to get them
+    //  Global Objects
     public static List<Department> departments = new ArrayList<>();
     public static List<Employee> employees = new ArrayList<>();
     public static List<Employee> deptMarketing = new ArrayList<>();
@@ -51,21 +54,21 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     public static void createDepartments() {
-        List<String> departments = new ArrayList<>();
 
      //   Department Marketing = new Department();
-       // Department Sales = new Department();
+     //   Department Sales = new Department();
      //   Department Engineering = new Department();
-        departments.add("Marketing"");
-        departments.add("Sales");
-        departments.add("Engineering");
-        System.out.println(departments) ;
+        Department marketing = new Department(001, "Marketing");
+        Department sales = new Department(002, "Sales");
+        Department engineering = new Department(003, "Engineering");
 
-        System.out.println(departments.size());
+        departments.add(marketing);
+        departments.add(sales);
+        departments.add(engineering);
+    //    System.out.println(departments) ;
+    //    System.out.println(departments.size());
 
-        System.out.println(departments.get(0));
-        System.out.println(departments.get(1));
-        System.out.println(departments.get(2));
+
     }
 
     /**
@@ -73,13 +76,8 @@ public class Application {
      */
     public static void printDepartments() {
         System.out.println("------------- DEPARTMENTS ------------------------------");
-        System.out.println(departments.get(0));
-        System.out.println(departments.get(1));
-        System.out.println(departments.get(2));
-            System.out.println(departments.size());
-        //    System.out.println(departments.get(0));
         for (int i = 0; i < departments.size(); i++) {
-            System.out.println(departments.get(i));
+            System.out.println(departments.get(i).getName());
         }
     }
     //    System.out.println(Marketing);
@@ -93,36 +91,43 @@ public class Application {
      * Create employees and add them to the collection of employees
      */
     private static void createEmployees() {
-    List<Employee> employees = new ArrayList();
+/*
+ //  **Tip: use the Departments from the departments list to assign each employee's department. Retrieve
+ //           the two departments you need by using the get() method.**
 
- /*   **Tip: use the Departments from the departments list to assign each employee's department. Retrieve
-            the two departments you need by using the get() method.**
+ //      *use no-argument constructor and call setter methods to set each instance variable
+ //   employeeId = 001;
+    this.employeeId = 001;
+ //   firstName = Dean;
+    this.firstName = "Dean";
+//    lastName = Johnson;
+    this.lastName = "Johnson";
+//    email = djohnson@teams.com;
+    this.email = "djohnson@teams.com";
+ //   salary = 60000;
+//    department = Engineering;
+    this.department = "Engineering"; //department.get(2);
+ //   hireDate = 08/21/2020
+    this.hireDate = "08/21/2020";
 
-       *use no-argument constructor and call setter methods to set each instance variable
-    employeeId = 001;
-    firstName = Dean;
-    lastName = Johnson;
-    email = djohnson@teams.com;            Think we need to add parameters to our no arg const
-    salary = 60000;
-    department = Engineering;
-    hireDate = 08/21/2020
+//        *use all-argument constructor
+        Employee angie = new Employee(002, "Angie", "Smith", "asmith@teams.com", 60000,
+            Department.get(2), "08/21/2020");
+ //   employeeId = 002;
+ //   firstName = Angie;
+ //   lastName = Smith;
+//    email = asmith@teams.com;
+ //   salary = 60000; -> 10% increase
+ //   department = Engineering;       //department.get(2);
+  //  hireDate = 08/21/2020
 
-        *use all-argument constructor
-    employeeId = 002;
-    firstName = Angie;
-    lastName = Smith;
-    email = asmith@teams.com;
-    salary = 60000; -> 10% increase
-    department = Engineering;
-    hireDate = 08/21/2020
-
-        *use all-argument constructor
+/*        *use all-argument constructor
     employeeId = 003;
     firstName = Margaret;
     lastName = Thompson;
     email = mthompson@teams.com;
     salary = 60000;
-    department = Marketing;
+    department = Marketing;         //department.get(0);
     hireDate = 08/21/2020
  */
 
