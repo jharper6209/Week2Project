@@ -137,8 +137,7 @@ public class Application {
     }
 // giveAngie a 10% raise
    /* public void raiseSalary(double percent) {
-        //SALARY(SALARY * (1.0 + (percent/100)));
-        salary = salary * (1.0 + (percent/100));
+        salary = salary * (10.0 + (percent/100));
 */
     /**
      * Print out each employee in the collection.
@@ -179,7 +178,7 @@ public class Application {
         // for each loop
         for (Employee employee  : employees   ) {
         //  data-type name      :   loop thru
-            if (employee.getDepartment().equals("Engineering")) {
+            if (employee.getDepartment().getName().equals("Engineering")) {
                 deptEngineering.add(employee);
             }
         }
@@ -209,7 +208,7 @@ public class Application {
                 "10/10/2020", "10/17/2020");
 
         for (Employee employee  : employees   ) {
-            if (employee.getDepartment().equals("Marketing")) {
+            if (employee.getDepartment().getName().equals("Marketing")) {
                 deptMarketing.add(employee);
             }
         }
@@ -218,8 +217,6 @@ public class Application {
         projects.put(Marketing.getName(), Marketing);
         }
 
-
-
     /**
      * Print out each project in the collection.
      */
@@ -227,12 +224,10 @@ public class Application {
         System.out.println("\n------------- PROJECTS ------------------------------");
         System.out.println("TEams: " + deptEngineering.size());
 
-
         System.out.println("Marketing Landing Page: " + deptMarketing.size());
 /*  print number of employees on the project
         Teams: 2
         Marketing Landing Page: 1
-
  */
     }
 
