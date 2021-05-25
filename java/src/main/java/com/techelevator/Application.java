@@ -128,7 +128,8 @@ public class Application {
  //      Employee dean = new Employee();
   //            this.department= departments.get(2);
         Employee dean = new Employee(001, "Dean", "Johnson", "djohnson@teams.com", departments.get(2), "08/21/2020");
-        Employee angie = new Employee(002, "Angie", "Smith", "asmith@teams.com", departments.get(2), "08/21/2020");
+        Employee angie = new Employee(002, "Angie", "Smith", "asmith@teams.com", departments.get(2), "08/21/2020",
+              salary = STARTING_SALARY * 10);
         Employee margaret= new Employee(003, "Margaret", "Thompson", "mthompson@teams.com", departments.get(0), "08/21/2020");
 
         employees.add(dean);
