@@ -79,7 +79,7 @@ public class Employee {
     */
     public void raiseSalary(double percent) {
        //SALARY(SALARY * (1.0 + (percent/100)));
-        salary = salary * (1.0 + (percent/100));
+        salary = STARTING_SALARY * (1.0 + (percent/100));
 
 
 
@@ -136,5 +136,9 @@ public class Employee {
 
     public double getSalary() {
         return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 }
