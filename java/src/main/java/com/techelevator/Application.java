@@ -111,8 +111,9 @@ public class Application {
     this.hireDate = "08/21/2020";
 
 //        *use all-argument constructor
-        Employee angie = new Employee(002, "Angie", "Smith", "asmith@teams.com", 60000,
-            Department.get(2), "08/21/2020");
+
+ */
+
  //   employeeId = 002;
  //   firstName = Angie;
  //   lastName = Smith;
@@ -130,14 +131,32 @@ public class Application {
     department = Marketing;         //department.get(0);
     hireDate = 08/21/2020
  */
+        Employee dean = new Employee(001, "Dean", "Johnson", "djohnson@teams.com", departments.get(2), "08/21/2020");
+        Employee angie = new Employee(002, "Angie", "Smith", "asmith@teams.com", departments.get(2), "08/21/2020");
+        Employee margaret= new Employee(003, "Margaret", "Thompson", "mthompson@teams.com", departments.get(0), "08/21/2020");
 
+        employees.add(dean);
+        employees.add(angie);
+        employees.add(margaret);
     }
-
+// giveAngie a 10% raise
+   /* public void raiseSalary(double percent) {
+        //SALARY(SALARY * (1.0 + (percent/100)));
+        salary = salary * (1.0 + (percent/100));
+*/
     /**
      * Print out each employee in the collection.
      */
     private static void printEmployees() {
         System.out.println("\n------------- EMPLOYEES ------------------------------");
+
+
+        for (int i = 0; i < employees.size(); i++) {
+            System.out.println(employees.get(i).getFullName() + " (" + employees.get(i).getSalary() + ") " +
+                    employees.get(i).getDepartment().getName());
+
+        }
+
 /*  (fullName + " (" + salary + ") " + department)
     (fullName + " (" + salary + ") " + department)
     (fullName + " (" + salary + ") " + department)
@@ -149,8 +168,8 @@ public class Application {
      * Create the 'Teams' project.
      */
     private static void createTeamsProject() {
-/*  Map<String, Project> Teams= new HashMap();
-        name: Teams
+
+       /* name: Teams
         description: Project Management Software
         startDate: 10/10/2020
         dueDate: 11/10/2020
@@ -159,6 +178,7 @@ public class Application {
         Teams.put(Angie Smith);
 
  */
+        Map<String, Project> Teams= new HashMap();
     }
 
     /**
