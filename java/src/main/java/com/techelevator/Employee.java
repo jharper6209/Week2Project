@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import javax.print.attribute.standard.MediaSize;
 import java.util.Objects;
 
 public class Employee {
@@ -17,8 +18,6 @@ public class Employee {
 
 //Constructors
 
-
-
     public Employee (long employeeId, String firstName,String lastName, String email, Department department, String hireDate){
         this.employeeId = employeeId;
         this.firstName = firstName;
@@ -31,7 +30,13 @@ public class Employee {
     }
 
     public Employee() {
-
+        this.employeeId = 001;
+        this.firstName = "Dean";
+        this.lastName = "Johnson";
+        this.email = "djohnson@teams.com";
+        this.department = null;
+        this.hireDate = "08/21/2020";
+        this.salary = STARTING_SALARY;
     }
 
 //Methods
@@ -112,10 +117,6 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
-
-  //  public double getSalary() {        return salary;    }
-
-    // public void setSalary(double salary) {        this.salary = salary;    }
 
     public Department getDepartment() {
         return department;

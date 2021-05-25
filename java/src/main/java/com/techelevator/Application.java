@@ -17,6 +17,7 @@ public class Application {
     public static List<Employee> employees = new ArrayList<>();
     public static List<Employee> deptMarketing = new ArrayList<>();
     public static List<Employee> deptSales = new ArrayList<>();
+    public static List<Employee> deptEngineering = new ArrayList<>();
     public static Map<String, Project> projects = new HashMap();
 
     /**
@@ -97,21 +98,14 @@ public class Application {
 
  //      *use no-argument constructor and call setter methods to set each instance variable
  //   employeeId = 001;
-    this.employeeId = 001;
  //   firstName = Dean;
-    this.firstName = "Dean";
 //    lastName = Johnson;
-    this.lastName = "Johnson";
 //    email = djohnson@teams.com;
-    this.email = "djohnson@teams.com";
  //   salary = 60000;
 //    department = Engineering;
-    this.department = "Engineering"; //department.get(2);
  //   hireDate = 08/21/2020
-    this.hireDate = "08/21/2020";
 
 //        *use all-argument constructor
-
  */
 
  //   employeeId = 002;
@@ -131,6 +125,8 @@ public class Application {
     department = Marketing;         //department.get(0);
     hireDate = 08/21/2020
  */
+ //      Employee dean = new Employee();
+  //            this.department= departments.get(2);
         Employee dean = new Employee(001, "Dean", "Johnson", "djohnson@teams.com", departments.get(2), "08/21/2020");
         Employee angie = new Employee(002, "Angie", "Smith", "asmith@teams.com", departments.get(2), "08/21/2020");
         Employee margaret= new Employee(003, "Margaret", "Thompson", "mthompson@teams.com", departments.get(0), "08/21/2020");
@@ -168,24 +164,40 @@ public class Application {
      * Create the 'Teams' project.
      */
     private static void createTeamsProject() {
-
-       /* name: Teams
+       /* name: TEams
         description: Project Management Software
         startDate: 10/10/2020
         dueDate: 11/10/2020
 
         Teams.put(Dean Johnson);
         Teams.put(Angie Smith);
-
  */
-        Map<String, Project> Teams= new HashMap();
+        //creates a project just like department and employee
+        Project TEams = new Project("TEams", "Project Management Software", "10/10/2020", "11/10/2020");
+
+        //go through all employees and see if they are in Engineering, if so add them, if not move on
+        // for each loop
+        for (Employee employee  : employees   ) {
+        //  data-type name      :   loop thru
+            if (employee.getDepartment().equals("Engineering")) {
+                deptEngineering.add(employee);
+            }
+        }
+        TEams.setTeamMembers(deptEngineering);
+        //set the engineers to the team members of the project
+
+        projects.put(TEams.getName(), TEams);
+
+   //     projects.containsKey("name")
+
+
     }
 
     /**
      * Create the 'Marketing Landing Page' project.
      */
     private static void createLandingPageProject() {
-/*  Map<String, Project> MarketingLandingPage= new HashMap();
+/*
         name: Marketing Landing Page
         description: Lead Capture Landing Page for Marketing
         startDate: 10/10/2020
@@ -193,13 +205,30 @@ public class Application {
 
         MarketingLandingPage.put(Margaret Thompson)
  */
-    }
+        Project Marketing = new Project("Marketing Landing Page", "Lead Capture Landing Page for Marketing",
+                "10/10/2020", "10/17/2020");
+
+        for (Employee employee  : employees   ) {
+            if (employee.getDepartment().equals("Marketing")) {
+                deptMarketing.add(employee);
+            }
+        }
+        Marketing.setTeamMembers(deptMarketing);
+
+        projects.put(Marketing.getName(), Marketing);
+        }
+
+
 
     /**
      * Print out each project in the collection.
      */
     private static void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
+        System.out.println("TEams: " + deptEngineering.size());
+
+
+        System.out.println("Marketing Landing Page: " + deptMarketing.size());
 /*  print number of employees on the project
         Teams: 2
         Marketing Landing Page: 1
